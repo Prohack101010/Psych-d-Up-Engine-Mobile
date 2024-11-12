@@ -471,7 +471,9 @@ class MenuWeek extends MusicBeatState
 		sprDifficulty.y = txtWeekTitle.y + 5;
 		intendedScore = Highscore.getWeekScore(loadedWeeks[curWeek].fileName, curDifficulty);
 
+		#if desktop
 		DiscordClient.changePresence("Deciding to play week " + curWeek + " on " + sprDifficulty.animation.name + "!", null);
+		#end
 
 		FlxTween.tween(sprDifficulty, {y: txtWeekTitle.y + 62, alpha: 1}, 0.07);
 	}

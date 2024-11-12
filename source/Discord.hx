@@ -1,7 +1,9 @@
 package;
 
 import Sys.sleep;
+#if desktop
 import discord_rpc.DiscordRpc;
+#end
 
 #if LUA_ALLOWED
 import llua.Lua;
@@ -16,6 +18,7 @@ class DiscordClient
 	public function new()
 	{
 		trace("Discord Client starting...");
+		#if desktop
 		DiscordRpc.start({
 			clientID: "863222024192262205",
 			onReady: onReady,
@@ -32,21 +35,26 @@ class DiscordClient
 		}
 
 		DiscordRpc.shutdown();
+		#end
 	}
 	
 	public static function shutdown()
 	{
+		#if desktop
 		DiscordRpc.shutdown();
+		#end
 	}
 	
 	static function onReady()
 	{
+	    #if desktop
 		DiscordRpc.presence({
 			details: "In the Menus",
 			state: null,
 			largeImageKey: 'icon',
 			largeImageText: "Psych Engine"
 		});
+		#end
 	}
 
 	static function onError(_code:Int, _message:String)
@@ -63,7 +71,9 @@ class DiscordClient
 	{
 		var DiscordDaemon = sys.thread.Thread.create(() ->
 		{
+			#if desktop
 			new DiscordClient();
+			#end
 		});
 		trace("Discord Client initialized");
 		isInitialized = true;
@@ -78,6 +88,7 @@ class DiscordClient
 			endTimestamp = startTimestamp + endTimestamp;
 		}
 
+        #if desktop
 		DiscordRpc.presence({
 			details: details,
 			state: state,
@@ -88,6 +99,7 @@ class DiscordClient
 			startTimestamp : Std.int(startTimestamp / 1000),
             endTimestamp : Std.int(endTimestamp / 1000)
 		});
+		#end
 
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
 	}

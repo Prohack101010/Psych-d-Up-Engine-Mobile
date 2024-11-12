@@ -1,6 +1,8 @@
 package;
 
+#if desktop
 import Discord.DiscordClient;
+#end
 import flixel.util.FlxTimer;
 import flixel.util.FlxGradient;
 import flixel.FlxG;
@@ -170,7 +172,9 @@ class PlaySelection extends MusicBeatState
 			{
 				FlxG.switchState(new MainMenuState());
 
+                #if desktop
 				DiscordClient.changePresence("Back to the Main Menu.",  null);
+				#end
 
 				FlxTween.tween(FlxG.camera, { zoom: 2}, 0.4, { ease: FlxEase.expoIn});
 				FlxTween.tween(bg, { y: 0-bg.height}, 0.4, { ease: FlxEase.expoIn });
@@ -187,7 +191,9 @@ class PlaySelection extends MusicBeatState
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 
+                #if desktop
 				DiscordClient.changePresence("Selected: "+optionShit[curSelected].toUpperCase(),  null);
+				#end
 
 				menuItems.forEach(function(spr:FlxSprite)
 				{
@@ -213,10 +219,14 @@ class PlaySelection extends MusicBeatState
 							{
 								case 'week':
 									MusicBeatState.switchState(new MenuWeek());
+									#if desktop
 									DiscordClient.changePresence("Going to select a week.",  null);
+									#end
 								case 'freeplay':
 									MusicBeatState.switchState(new MenuFreeplay());
+									#if desktop
 									DiscordClient.changePresence("Am bored, so I freeplay.",  null);
+									#end
 								case 'modifier':
 									//FlxG.switchState(new MenuModifiers());
 				                    var valuesArray:Array<String> = ['0.05,0.05'];
@@ -234,13 +244,19 @@ class PlaySelection extends MusicBeatState
 											targetsArray[i].shake(intensity, duration);
 										}
 									}
+									#if desktop
 									DiscordClient.changePresence("Time to spice the game.",  null);
+									#end
 								case 'marathon':
 									//FlxG.switchState(new MenuMarathon());
+									#if desktop
 									DiscordClient.changePresence("I wanna make a marathon.",  null);
+									#end
 								case 'endless':
 									//FlxG.switchState(new MenuEndless());
+									#if desktop
 									DiscordClient.changePresence("Endless easy SMM2 moment.",  null);
+									#end
 							}
 						});
 				    });
@@ -281,6 +297,8 @@ class PlaySelection extends MusicBeatState
 			spr.updateHitbox();
 		});
 
+       #if desktop
 		DiscordClient.changePresence("Play Selection: "+optionShit[curSelected].toUpperCase(),  null);
+	    #end
 	}
 }
