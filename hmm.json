@@ -32,8 +32,10 @@
     },
     {
       "name": "hxcpp",
-      "type":"haxelib",
-      "version":"4.2.1"
+      "type": "git",
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/mcagabe19-stuff/hxcpp"
     },
     {
       "name": "tjson",
@@ -78,8 +80,8 @@
       "name": "linc_luajit",
       "type":"git",
       "dir":null,
-      "ref":"master",
-      "url":"https://github.com/Sirox228/linc_luajit"
+      "ref":"main",
+      "url":"https://github.com/mcagabe19-stuff/linc_luajit-rewriten"
     },
     {
       "name":"extension-androidtools",
