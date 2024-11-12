@@ -174,7 +174,7 @@ class Paths
 
 	inline static public function json(key:String, ?library:String)
 	{
-		return SUtil.getPath() + getPath('data/$key.json', TEXT, library);
+		return getPath('data/$key.json', TEXT, library);
 	}
 
 	inline static public function shaderFragment(key:String, ?library:String)
@@ -384,7 +384,7 @@ class Paths
 		}
 		#end
 		// I hate this so god damn much
-		var gottenPath:String = getPath('$path/$key.$SOUND_EXT', SOUND, library);
+		var gottenPath:String = SUtil.getPath() + getPath('$path/$key.$SOUND_EXT', SOUND, library);
 		gottenPath = gottenPath.substring(gottenPath.indexOf(':') + 1, gottenPath.length);
 		// trace(gottenPath);
 		if(!currentTrackedSounds.exists(gottenPath))

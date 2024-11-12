@@ -997,7 +997,7 @@ class PlayState extends MusicBeatState
 				addBehindDad(evilTrail);
 		}
 
-		var file:String = Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
+		var file:String = SUtil.getPath() + Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
 		if (OpenFlAssets.exists(file)) {
 			dialogueJson = DialogueBoxPsych.parseDialogue(file);
 		}
@@ -2478,7 +2478,7 @@ class PlayState extends MusicBeatState
 		var daBeats:Int = 0; // Not exactly representative of 'daBeats' lol, just how much it has looped
 
 		var songName:String = Paths.formatToSongPath(SONG.song);
-		var file:String = Paths.json(songName + '/events');
+		var file:String = SUtil.getPath() + Paths.json(songName + '/events');
 		#if MODS_ALLOWED
 		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
 		#else
