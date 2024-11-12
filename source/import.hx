@@ -30,7 +30,6 @@ import flixel.util.FlxTimer;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.tweens.FlxEase;
-import flixel.sound.FlxSound;
 import flixel.util.FlxDestroyUtil;
 import flixel.tweens.FlxTween;
 import flixel.group.FlxSpriteGroup;
