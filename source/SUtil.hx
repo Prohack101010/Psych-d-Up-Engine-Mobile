@@ -23,7 +23,7 @@ class SUtil
 		var daPath:String = '';
 		#if android
 		if (!FileSystem.exists(rootDir + 'storagetype.txt'))
-			File.saveContent(rootDir + 'storagetype.txt', ClientPrefs.data.storageType);
+			File.saveContent(rootDir + 'storagetype.txt', 'EXTERNAL');
 		var curStorageType:String = File.getContent(rootDir + 'storagetype.txt');
 		daPath = force ? StorageType.fromStrForce(curStorageType) : StorageType.fromStr(curStorageType);
 		daPath = Path.addTrailingSlash(daPath);
@@ -154,9 +154,9 @@ class SUtil
 enum abstract StorageType(String) from String to String
 {
     final forcedPath = '/storage/emulated/0/';
-	final packageNameLocal = 'com.kraloyuncu.psychextended';
+	final packageNameLocal = 'com.shadowmario.psychdupengine';
 	final fileLocalONLINE = 'PsychOnline';
-	final fileLocal = 'PsychEngine';
+	final fileLocal = 'Psych-Up-Engine';
 	final fileLocalNF = 'NF Engine';
 	final fileLocalEX = 'Psych Extended'; //idk why
 
