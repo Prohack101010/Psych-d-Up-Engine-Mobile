@@ -2127,7 +2127,7 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			if (skipCountdown || startOnTime > 0) skipArrowStartTween = true;
             MusicBeatState.mobilec.visible = true;
-    		f (MusicBeatState.checkHitbox != true) MusicBeatState.mobilec.alpha = 0.7; //better for pc build
+    		if (MusicBeatState.checkHitbox != true) MusicBeatState.mobilec.alpha = 0.7; //better for pc build
 			generateStaticArrows(0);
 			generateStaticArrows(1);
 			for (i in 0...playerStrums.length) {
