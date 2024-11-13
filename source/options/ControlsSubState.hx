@@ -33,6 +33,7 @@ class ControlsSubState extends MusicBeatSubstate {
 
 	private static var defaultKey:String = 'Reset to Default Keys';
 	private var bindLength:Int = 0;
+	var SelectSubstate = MobileControlSelectSubState;
 
 	var optionShit:Array<Dynamic> = [
 		['NOTES'],

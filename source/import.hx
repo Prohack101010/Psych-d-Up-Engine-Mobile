@@ -3,6 +3,7 @@ import Paths;
 // Mobile Things
 import mobile.flixel.*;
 import mobile.objects.*;
+import mobile.options.*;
 import mobile.backend.*;
 import mobile.substates.*;
 import mobile.backend.Data;

@@ -1239,7 +1239,7 @@ class PlayState extends MusicBeatState
 		
     	addMobileControls();
     	MusicBeatState.mobilec.visible = false;
-    	if (ClientPrefs.data.hitboxmode == 'New') MusicBeatState.mobilec.alpha = 0.000001;
+    	if (ClientPrefs.hitboxmode == 'New') MusicBeatState.mobilec.alpha = 0.000001;
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
