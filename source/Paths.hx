@@ -154,7 +154,7 @@ class Paths
 
 	inline public static function getPreloadPath(file:String = '')
 	{
-		return SUtil.getPath() + 'assets/$file';
+		return 'assets/$file';
 	}
 
 	inline static public function file(file:String, type:AssetType = TEXT, ?library:String)
@@ -174,7 +174,7 @@ class Paths
 
 	inline static public function json(key:String, ?library:String)
 	{
-		return SUtil.getPath() + getPath('data/$key.json', TEXT, library);
+		return getPath('data/$key.json', TEXT, library);
 	}
 
 	inline static public function shaderFragment(key:String, ?library:String)
@@ -255,8 +255,8 @@ class Paths
 			return File.getContent(modFolders(key));
 		#end
 
-		if (FileSystem.exists(getPreloadPath(key)))
-			return File.getContent(getPreloadPath(key));
+		if (FileSystem.exists(SUtil.getPath() + getPreloadPath(key)))
+			return File.getContent(SUtil.getPath() + getPreloadPath(key));
 
 		if (currentLevel != null)
 		{
@@ -294,7 +294,7 @@ class Paths
 		}
 		#end
 
-		if(OpenFlAssets.exists(SUtil.getPath() + getPath(key, type))) {
+		if(OpenFlAssets.exists(getPath(key, type))) {
 			return true;
 		}
 		return false;
@@ -474,7 +474,7 @@ class Paths
 	static public function pushGlobalMods() // prob a better way to do this but idc
 	{
 		globalMods = [];
-		var path:String = 'modsList.txt';
+		var path:String = SUtil.getPath() + 'modsList.txt';
 		if(FileSystem.exists(path))
 		{
 			var list:Array<String> = CoolUtil.coolTextFile(path);
