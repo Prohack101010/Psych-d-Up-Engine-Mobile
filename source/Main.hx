@@ -119,6 +119,8 @@ class Main extends Sprite
 		FlxG.mouse.visible = false;
 		#end
 		
+		#if android FlxG.android.preventDefaultKeys = [BACK]; #end
+		
 		#if CRASH_HANDLER
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
 		#end

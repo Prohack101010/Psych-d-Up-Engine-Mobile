@@ -120,6 +120,9 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			}
 			updateTextFrom(optionsArray[i]);
 		}
+		
+		addVirtualPad(FULL, A_B_C);
+		addVirtualPadCamera();
 
 		changeSelection();
 		reloadCheckboxes();
@@ -238,7 +241,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET || _virtualpad.buttonC.justPressed)
 			{
 				for (i in 0...optionsArray.length)
 				{

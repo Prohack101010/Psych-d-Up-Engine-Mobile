@@ -278,12 +278,17 @@ class MenuFreeplay extends MusicBeatState
 		{
 			selectable = true;
 		});
+		
+		addVirtualPad(FULL, A_B_C_X_Y_Z);
+		addVirtualPadCamera();
 	}
 
 	override function closeSubState() {
 		changeSelection(0, false);
 		persistentUpdate = true;
 		super.closeSubState();
+		removeVirtualPad();
+		addVirtualPad(FULL, A_B_C_X_Y_Z);
 	}
 
 	public function addSong(songName:String, weekNum:Int, songCharacter:String, color:Int)
@@ -353,11 +358,11 @@ class MenuFreeplay extends MusicBeatState
 		var upP = controls.UI_UP_P;
 		var downP = controls.UI_DOWN_P;
 		var accepted = controls.ACCEPT;
-		var space = FlxG.keys.justPressed.SPACE;
-		var ctrl = FlxG.keys.justPressed.CONTROL;
+		var space = FlxG.keys.justPressed.SPACE || _virtualpad.buttonX.justPressed;
+		var ctrl = FlxG.keys.justPressed.CONTROL || _virtualpad.buttonC.justPressed;
 
 		var shiftMult:Int = 1;
-		if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
+		if(FlxG.keys.pressed.SHIFT || _virtualpad.buttonZ.pressed) shiftMult = 3;
 
 		if(songs.length > 1 && selectable)
 		{
@@ -425,6 +430,7 @@ class MenuFreeplay extends MusicBeatState
 		{
 			persistentUpdate = false;
 			openSubState(new GameplayChangersSubstate());
+			removeVirtualPad();
 		}
 		else if(space)
 		{
@@ -487,10 +493,11 @@ class MenuFreeplay extends MusicBeatState
 					
 			destroyFreeplayVocals();
 		}
-		else if(controls.RESET)
+		else if(controls.RESET || _virtualpad.buttonY.justPressed)
 		{
 			persistentUpdate = false;
 			openSubState(new ResetScoreSubState(songs[curSelected].songName, curDifficulty, songs[curSelected].songCharacter));
+			removeVirtualPad();
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 		}
 		discIcon.x = disc.x + disc.width / 2 - discIcon.width / 2;

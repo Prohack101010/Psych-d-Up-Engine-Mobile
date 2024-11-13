@@ -73,7 +73,7 @@ class FlxVirtualPad extends FlxSpriteGroup {
 		super();
 
 		orgAntialiasing = antialiasingAlt;
-		orgAlpha = 0.7;
+		orgAlpha = ClientPrefs.VirtualPadAlpha;
 
 		dPad = new FlxSpriteGroup();
 		dPad.scrollFactor.set();
@@ -259,7 +259,10 @@ class FlxVirtualPad extends FlxSpriteGroup {
 				dPad.add(add(buttonCEG = createButton(FlxG.width - (44 + 42 * 1) * 3, 25, 44 * 3, 127, "g", 0x00FF00)));
 				
 			case controlExtend:
-			    //Do Nothing for now
+			    if (Type.getClass(FlxG.state) != PlayState || Type.getClass(FlxG.state) == PlayState && ClientPrefs.extraKeys >= 1) actions.add(add(buttonExtra1 = createButton(FlxG.width * 0.5 - 44 * 3, FlxG.height * 0.5 - 127 * 0.5, 44 * 3, 127, "f", 0xFF0000)));
+				if (Type.getClass(FlxG.state) != PlayState || Type.getClass(FlxG.state) == PlayState && ClientPrefs.extraKeys >= 2) actions.add(add(buttonExtra2 = createButton(FlxG.width * 0.5, FlxG.height * 0.5 - 127 * 0.5, 44 * 3, 127, "g", 0xFFFF00)));	
+				if (Type.getClass(FlxG.state) != PlayState || Type.getClass(FlxG.state) == PlayState && ClientPrefs.extraKeys >= 3) actions.add(add(buttonExtra3 = createButton(FlxG.width * 0.5, FlxG.height * 0.5 - 127 * 0.5, 44 * 3, 127, "x", 0x99062D)));	
+				if (Type.getClass(FlxG.state) != PlayState || Type.getClass(FlxG.state) == PlayState && ClientPrefs.extraKeys >= 4) actions.add(add(buttonExtra4 = createButton(FlxG.width * 0.5, FlxG.height * 0.5 - 127 * 0.5, 44 * 3, 127, "y", 0x4A35B9)));	
 				
 			case CHART_EDITOR:
 				actions.add(add(buttonV = createButton(FlxG.width - 170 * 3, FlxG.height - 85 * 3, 44 * 3, 127, "v", 0x49A9B2)));            
@@ -298,7 +301,7 @@ class FlxVirtualPad extends FlxSpriteGroup {
 	}
 
 	public static function getFrames():FlxAtlasFrames {
-		return Paths.getPackerAtlas('mobilecontrols/virtualpad/original');
+	    return Paths.getPackerAtlas('mobilecontrols/virtualpad/original');
 	}
 	
 	override public function destroy():Void

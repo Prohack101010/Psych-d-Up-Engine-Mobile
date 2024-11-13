@@ -282,6 +282,9 @@ class MenuWeek extends MusicBeatState
 		{
 			selectable = true;
 		});
+		
+		addVirtualPad(FULL, A_B_X_Y);
+		addVirtualPadCamera();
 	}
 
 	override function closeSubState() {
@@ -350,12 +353,12 @@ class MenuWeek extends MusicBeatState
 			else if (upP || downP)
 				changeDifficulty();
 
-			if(FlxG.keys.justPressed.CONTROL)
+			if(FlxG.keys.justPressed.CONTROL || _virtualpad.buttonX.justPressed)
 			{
 				persistentUpdate = false;
 				openSubState(new GameplayChangersSubstate());
 			}
-			else if(controls.RESET)
+			else if(controls.RESET || _virtualpad.buttonY.justPressed)
 			{
 				persistentUpdate = false;
 				openSubState(new ResetScoreSubState('', curDifficulty, '', curWeek));

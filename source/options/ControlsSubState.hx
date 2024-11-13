@@ -128,6 +128,24 @@ class ControlsSubState extends MusicBeatSubstate {
 
 			if (controls.BACK) {
 				ClientPrefs.reloadControls();
+				if (MobileControlSelectSubState.inControlsSubstate)
+				{
+				    SelectSubstate.leftArrow.visible = SelectSubstate.rightArrow.visible = SelectSubstate.grpControls.visible = SelectSubstate.exit.visible = SelectSubstate.reset.visible = SelectSubstate.keyboard.visible = SelectSubstate.tipText.visible = true;
+				    
+				    if (SelectSubstate.daChoice == "Pad-Custom")
+                    {
+                        SelectSubstate.upPozition.visible = true;
+                        SelectSubstate.downPozition.visible = true;
+                        SelectSubstate.leftPozition.visible = true;
+                        SelectSubstate.rightPozition.visible = true;
+                        SelectSubstate.extra4Pozition.visible = true;
+                        SelectSubstate.extra3Pozition.visible = true;
+                        SelectSubstate.extra2Pozition.visible = true;
+                        SelectSubstate.extra1Pozition.visible = true;
+                    }
+                    SelectSubstate.titleText.text = 'Mobile Controls';
+				    MobileControlSelectSubState.inControlsSubstate = false; // Not Needed But IDK
+				}
 				close();
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 			}

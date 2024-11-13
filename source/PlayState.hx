@@ -1239,7 +1239,7 @@ class PlayState extends MusicBeatState
 		
     	addMobileControls();
     	MusicBeatState.mobilec.visible = false;
-    	MusicBeatState.mobilec.alpha = 0.000001;
+    	if (ClientPrefs.data.hitboxmode == 'New') MusicBeatState.mobilec.alpha = 0.000001;
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -2127,7 +2127,7 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			if (skipCountdown || startOnTime > 0) skipArrowStartTween = true;
             MusicBeatState.mobilec.visible = true;
-    		if (MusicBeatState.checkHitbox != true) MusicBeatState.mobilec.alpha = 0.7; //better for pc build
+    		if (MusicBeatState.checkHitbox != true) MusicBeatState.mobilec.alpha = ClientPrefs.VirtualPadAlpha; //better for pc build
 			generateStaticArrows(0);
 			generateStaticArrows(1);
 			for (i in 0...playerStrums.length) {
@@ -3054,7 +3054,7 @@ class PlayState extends MusicBeatState
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
 		}
 
-		if (controls.PAUSE && startedCountdown && canPause)
+		if (controls.PAUSE #if android || FlxG.android.justReleased.BACK #end #if ios || _virtualpad.buttonB.pressed #end && startedCountdown && canPause)
 		{
 			var ret:Dynamic = callOnLuas('onPause', [], false);
 			if(ret != FunkinLua.Function_Stop) {

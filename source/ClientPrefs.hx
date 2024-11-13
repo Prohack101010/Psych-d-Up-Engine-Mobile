@@ -22,12 +22,20 @@ class ClientPrefs {
 	public static var camZooms:Bool = true;
 	public static var hideHud:Bool = false;
 	public static var noteOffset:Int = 0;
+	public static var extraKeys:Int = 2;
 	public static var arrowHSV:Array<Array<Int>> = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]];
 	public static var ghostTapping:Bool = true;
 	public static var timeBarType:String = 'Time Left';
+	public static var hitboxLocation:String = 'Bottom';
+	public static var hitboxmode:String = 'New';
+	public static var hitboxtype:String = 'Gradient';
+	public static var storageType:String = 'EXTERNAL';
 	public static var scoreZoom:Bool = true;
 	public static var noReset:Bool = false;
+	public static var hitboxhint:Bool = false;
 	public static var healthBarAlpha:Float = 1;
+	public static var VirtualPadAlpha:Float = 0.75;
+	public static var hitboxalpha:Float = 0.7;
 	public static var controllerMode:Bool = false;
 	public static var hitsoundVolume:Float = 0;
 	public static var pauseMusic:String = 'Tea Time';
@@ -108,13 +116,21 @@ class ClientPrefs {
 		//FlxG.save.data.violence = violence;
 		FlxG.save.data.camZooms = camZooms;
 		FlxG.save.data.noteOffset = noteOffset;
+		FlxG.save.data.extraKeys = extraKeys;
 		FlxG.save.data.hideHud = hideHud;
 		FlxG.save.data.arrowHSV = arrowHSV;
 		FlxG.save.data.ghostTapping = ghostTapping;
 		FlxG.save.data.timeBarType = timeBarType;
+		FlxG.save.data.hitboxLocation = hitboxLocation;
 		FlxG.save.data.scoreZoom = scoreZoom;
 		FlxG.save.data.noReset = noReset;
+		FlxG.save.data.hitboxhint = hitboxhint;
+		FlxG.save.data.hitboxmode = hitboxmode;
+		FlxG.save.data.hitboxtype = hitboxtype;
+		FlxG.save.data.storageType = storageType;
 		FlxG.save.data.healthBarAlpha = healthBarAlpha;
+		FlxG.save.data.VirtualPadAlpha = VirtualPadAlpha;
+		FlxG.save.data.hitboxalpha = hitboxalpha;
 		FlxG.save.data.comboOffset = comboOffset;
 		FlxG.save.data.achievementsMap = Achievements.achievementsMap;
 		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
@@ -196,6 +212,9 @@ class ClientPrefs {
 		if(FlxG.save.data.noteOffset != null) {
 			noteOffset = FlxG.save.data.noteOffset;
 		}
+		if(FlxG.save.data.extraKeys != null) {
+			extraKeys = FlxG.save.data.extraKeys;
+		}
 		if(FlxG.save.data.arrowHSV != null) {
 			arrowHSV = FlxG.save.data.arrowHSV;
 		}
@@ -205,14 +224,35 @@ class ClientPrefs {
 		if(FlxG.save.data.timeBarType != null) {
 			timeBarType = FlxG.save.data.timeBarType;
 		}
+		if(FlxG.save.data.hitboxLocation != null) {
+			hitboxLocation = FlxG.save.data.hitboxLocation;
+		}
 		if(FlxG.save.data.scoreZoom != null) {
 			scoreZoom = FlxG.save.data.scoreZoom;
 		}
 		if(FlxG.save.data.noReset != null) {
 			noReset = FlxG.save.data.noReset;
 		}
+		if(FlxG.save.data.hitboxhint != null) {
+			hitboxhint = FlxG.save.data.hitboxhint;
+		}
+		if(FlxG.save.data.hitboxmode != null) {
+			hitboxmode = FlxG.save.data.hitboxmode;
+		}
+		if(FlxG.save.data.hitboxtype != null) {
+			hitboxtype = FlxG.save.data.hitboxtype;
+		}
+		if(FlxG.save.data.storageType != null) {
+			storageType = FlxG.save.data.storageType;
+		}
 		if(FlxG.save.data.healthBarAlpha != null) {
 			healthBarAlpha = FlxG.save.data.healthBarAlpha;
+		}
+		if(FlxG.save.data.VirtualPadAlpha != null) {
+			VirtualPadAlpha = FlxG.save.data.VirtualPadAlpha;
+		}
+		if(FlxG.save.data.hitboxalpha != null) {
+			hitboxalpha = FlxG.save.data.hitboxalpha;
 		}
 		if(FlxG.save.data.comboOffset != null) {
 			comboOffset = FlxG.save.data.comboOffset;

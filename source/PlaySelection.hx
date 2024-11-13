@@ -124,6 +124,9 @@ class PlaySelection extends MusicBeatState
 			{
 				selectable = true;
 			});
+			
+		addVirtualPad(LEFT_RIGHT, A_B);
+		addVirtualPadCamera();
 	}
 
 	var selectedSomethin:Bool = false;
