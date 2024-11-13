@@ -8,14 +8,13 @@
     },
     {
       "name": "openfl",
-      "type": "git",
-      "ref": "develop",
-      "url": "https://github.com/Prohack101010/openfl-0.6.3"
+      "type": "haxelib",
+      "version": "9.1.0"
     },
     {
       "name": "flixel",
       "type": "git",
-      "ref": "main",
+      "ref": "a3dff58cdb312876b18766e4d288d769934a721d",
       "url": "https://github.com/Prohack101010/flixel-0.6.3_ex"
     },
     {
@@ -31,7 +30,7 @@
     {
       "name": "flixel-ui",
       "type": "haxelib",
-      "version": null
+      "version": "2.4.0"
     },
     {
       "name": "hxcpp",
