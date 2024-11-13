@@ -1764,7 +1764,7 @@ class ChartingState extends MusicBeatState
 
 
 
-			if(FlxG.keys.justPressed.Z || _virtualpad.buttonV.justPressed) && curZoom > 0 && !FlxG.keys.pressed.CONTROL) {
+			if((FlxG.keys.justPressed.Z || _virtualpad.buttonV.justPressed) && curZoom > 0 && !FlxG.keys.pressed.CONTROL) {
 				--curZoom;
 				updateZoom();
 			}
