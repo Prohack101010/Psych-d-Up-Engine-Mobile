@@ -289,6 +289,8 @@ class MenuWeek extends MusicBeatState
 	override function closeSubState() {
 		persistentUpdate = true;
 		changeWeek();
+		removeVirtualPad();
+		addVirtualPad(FULL, A_B_X_Y);
 		super.closeSubState();
 	}
 	
@@ -355,14 +357,14 @@ class MenuWeek extends MusicBeatState
 			if(FlxG.keys.justPressed.CONTROL || _virtualpad.buttonX.justPressed)
 			{
 				persistentUpdate = false;
-				openSubState(new GameplayChangersSubstate());
 				removeVirtualPad();
+				openSubState(new GameplayChangersSubstate());
 			}
 			else if(controls.RESET || _virtualpad.buttonY.justPressed)
 			{
 				persistentUpdate = false;
-				openSubState(new ResetScoreSubState('', curDifficulty, '', curWeek));
 				removeVirtualPad();
+				openSubState(new ResetScoreSubState('', curDifficulty, '', curWeek));
 				//FlxG.sound.play(Paths.sound('scrollMenu'));
 			}
 			else if (controls.ACCEPT)

@@ -188,9 +188,7 @@ class CopyState extends MusicBeatState
 		// removes unwanted assets
 		var assets = locatedFiles.filter(folder -> folder.startsWith('assets/'));
 		var mods = locatedFiles.filter(folder -> folder.startsWith('mods/'));
-		var modpack = locatedFiles.filter(folder -> folder.startsWith('modpack/'));
 		locatedFiles = assets.concat(mods);
-		locatedFiles = assets.concat(modpack);
 
 		var filesToRemove:Array<String> = [];
 

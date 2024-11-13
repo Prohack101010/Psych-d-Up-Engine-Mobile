@@ -70,7 +70,7 @@ class ResetScoreSubState extends MusicBeatSubstate
 		add(noText);
 		updateOptions();
 		
-		addVirtualPad(FULL, A_B_C);
+		addVirtualPad(FULL, A_B);
 		addVirtualPadCamera();
 	}
 

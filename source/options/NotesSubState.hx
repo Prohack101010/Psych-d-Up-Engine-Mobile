@@ -89,6 +89,9 @@ class NotesSubState extends MusicBeatSubstate
 		add(hsbText);
 
 		changeSelection();
+		
+		addVirtualPad(FULL, A_B_C);
+		addVirtualPadCamera();
 	}
 
 	var changingNote:Bool = false;
@@ -184,9 +187,6 @@ class NotesSubState extends MusicBeatSubstate
 		if(nextAccept > 0) {
 			nextAccept -= 1;
 		}
-		
-		addVirtualPad(FULL, A_B_C);
-		addVirtualPadCamera();
 		
 		super.update(elapsed);
 	}
