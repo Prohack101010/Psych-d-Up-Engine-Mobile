@@ -53,11 +53,10 @@ class Main extends Sprite
 	{
 		super();
 		
-		#if mobile
 		#if android
-		SUtil.requestPermissions();
-		#end
-		Sys.setCwd(SUtil.getStorageDirectory());
+		SUtil.doTheCheck();
+		Sys.setCwd(SUtil.getPath());
+		SUtil.gameCrashCheck();
 		#end
 
 		if (stage != null)

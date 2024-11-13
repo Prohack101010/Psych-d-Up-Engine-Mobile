@@ -1,43 +1,39 @@
 {
   "dependencies": [
     {
-      "name": "lime",
-      "type": "git",
-      "dir": null,
-      "ref": "main",
-      "url": "https://github.com/mcagabe19-stuff/lime-8.2.0"
+      "name":"lime",
+      "type":"haxelib",
+      "version":"7.9.0"
     },
     {
       "name": "openfl",
       "type": "haxelib",
-      "version": "9.3.3"
+      "version": "9.1.0"
     },
     {
       "name": "flixel",
       "type": "haxelib",
-      "version": "5.3.0"
+      "version": "4.11.0"
     },
     {
       "name": "flixel-addons",
       "type": "haxelib",
-      "version": "3.2.2"
-    },
-    {
-      "name": "flixel-ui",
-      "type": "haxelib",
-      "version": "2.5.0"
+      "version": "2.11.0"
     },
     {
       "name": "flixel-tools",
       "type": "haxelib",
-      "version": "1.5.1"
+      "version": null
+    },
+    {
+      "name": "flixel-ui",
+      "type": "haxelib",
+      "version": null
     },
     {
       "name": "hxcpp",
-      "type": "git",
-      "dir": null,
-      "ref": "master",
-      "url": "https://github.com/mcagabe19-stuff/hxcpp"
+      "type":"haxelib",
+      "version":"4.2.1"
     },
     {
       "name": "tjson",
@@ -82,15 +78,15 @@
       "name": "linc_luajit",
       "type":"git",
       "dir":null,
-      "ref":"main",
-      "url":"https://github.com/mcagabe19-stuff/linc_luajit-rewriten"
+      "ref":"master",
+      "url":"https://github.com/Sirox228/linc_luajit"
     },
     {
       "name":"extension-androidtools",
       "type":"git",
       "dir":null,
       "ref":"main",
-      "url":"https://github.com/MAJigsaw77/extension-androidtools"
+      "url":"https://github.com/MaysLastPlay77/extension-androidtools"
     }
   ]
 }

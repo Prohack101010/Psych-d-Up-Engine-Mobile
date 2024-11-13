@@ -4,7 +4,7 @@ package;
 import Discord.DiscordClient;
 #end
 import editors.ChartingState;
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.FlxG;
