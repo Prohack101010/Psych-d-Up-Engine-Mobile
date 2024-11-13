@@ -36,7 +36,7 @@ class SUtil
 		var daPath:String = '';
 		#if android
 		if (!FileSystem.exists(LimeSystem.applicationStorageDirectory + 'storagetype.txt'))
-			File.saveContent(LimeSystem.applicationStorageDirectory + 'storagetype.txt', 'EXTERNAL_DATA');
+			File.saveContent(LimeSystem.applicationStorageDirectory + 'storagetype.txt', 'EXTERNAL');
 		var curStorageType:String = File.getContent(LimeSystem.applicationStorageDirectory + 'storagetype.txt');
 		daPath = force ? StorageType.fromStrForce(curStorageType) : StorageType.fromStr(curStorageType);
 		daPath = haxe.io.Path.addTrailingSlash(daPath);
@@ -242,7 +242,7 @@ enum abstract StorageType(String) from String to String
 {
 	final forcedPath = '/storage/emulated/0/';
 	final packageNameLocal = 'com.kraloyuncu.psychextended';
-	final fileLocal = 'PsychEngine';
+	final fileLocal = 'Psych-Up-Engine';
 	final fileLocalNF = 'NF Engine';
 	final fileLocalEX = 'Psych Extended'; //idk why
 
