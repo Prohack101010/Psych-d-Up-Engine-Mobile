@@ -37,7 +37,7 @@
       "name": "hxcpp",
       "type":"git",
       "dir":null,
-      "ref":"1260d8995f712f6585964c54be3153dd07cfe574",
+      "ref":"master",
       "url":"https://github.com/mcagabe19-stuff/hxcpp"
     },
     {
