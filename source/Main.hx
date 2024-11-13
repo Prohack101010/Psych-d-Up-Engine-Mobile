@@ -51,13 +51,23 @@ class Main extends Sprite
 
 	public function new()
 	{
-		super();
+		#if mobile
+	    #if android
+		SUtil.doPermissionsShit();
+		if (!FileSystem.exists(SUtil.getStorageDirectory()))
+			FileSystem.createDirectory(SUtil.getStorageDirectory());
+		#end
+		Sys.setCwd(SUtil.getStorageDirectory());
+		#end
 		
 		#if android
-		SUtil.doTheCheck();
-		Sys.setCwd(SUtil.getPath());
+		if (!FileSystem.exists(SUtil.getStorageDirectory()))
+			FileSystem.createDirectory(SUtil.getStorageDirectory());
+	    #end
+			
+		super();
+		
 		SUtil.gameCrashCheck();
-		#end
 
 		if (stage != null)
 		{
