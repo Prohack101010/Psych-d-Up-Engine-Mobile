@@ -43,6 +43,8 @@
 
 	<classpath name="source" />
 	
+	<architecture name="ARM64" exclude="ARMV7" if="32bits_disabled" /> <!-- Only Arm64 Build Because I dont want to wait 30 minute -->
+	
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
 	<define name="MODS_ALLOWED" if="desktop || android" />
 	<define name="LUA_ALLOWED" if="desktop || android" />
