@@ -121,7 +121,7 @@ class SUtil
 		Sys.println("Crash dump saved in " + Path.normalize(path));
 		Sys.println("Making a simple alert ...");
 
-		SUtil.showPopUp("Uncaught Error :(!", errMsg);
+		SUtil.showPopUp(errMsg, "Uncaught Error :(!");
 		LimeSystem.exit(1);
 	}
 
@@ -134,7 +134,7 @@ class SUtil
 				FileSystem.createDirectory('saves');
 
 			File.saveContent('saves/' + fileName + fileExtension, fileData);
-			showPopUp("Success!", fileName + " file has been saved.");
+			showPopUp(fileName + " file has been saved.", "Success!");
 		}
 		catch (e:haxe.Exception)
 			trace('File couldn\'t be saved. (${e.message})');
@@ -145,7 +145,7 @@ class SUtil
 	{
 	    if (!FileSystem.exists(SUtil.getStorageDirectory() + 'assets') && !FileSystem.exists(SUtil.getStorageDirectory() + 'mods'))
 		{
-			SUtil.showPopUp('Uncaught Error :(', "Whoops, seems you didn't extract the files from the .APK!\nPlease watch the tutorial by pressing OK.");
+			SUtil.showPopUp("Whoops, seems you didn't extract the files from the .APK!\nPlease watch the tutorial by pressing OK.", 'Uncaught Error :(');
 			CoolUtil.browserLoad('https://youtu.be/zjvkTmdWvfU');
 			LimeSystem.exit(1);
 		}
@@ -153,14 +153,14 @@ class SUtil
 		{
 			if (!FileSystem.exists(SUtil.getStorageDirectory() + 'assets'))
 			{
-				SUtil.showPopUp('Uncaught Error :(', "Whoops, seems you didn't extract the assets folder from the .APK!\nPlease watch the tutorial by pressing OK.");
+				SUtil.showPopUp("Whoops, seems you didn't extract the assets folder from the .APK!\nPlease watch the tutorial by pressing OK.", 'Uncaught Error :(');
 				CoolUtil.browserLoad('https://youtu.be/zjvkTmdWvfU');
 				LimeSystem.exit(1);
 			}
 
 			if (!FileSystem.exists(SUtil.getStorageDirectory() + 'mods'))
 			{
-				SUtil.showPopUp('Uncaught Error :(', "Whoops, seems you didn't extract the mods folder from the .APK!\nPlease watch the tutorial by pressing OK.");
+				SUtil.showPopUp("Whoops, seems you didn't extract the mods folder from the .APK!\nPlease watch the tutorial by pressing OK.", 'Uncaught Error :(');
 				CoolUtil.browserLoad('https://youtu.be/zjvkTmdWvfU');
 				LimeSystem.exit(1);
 			}
@@ -181,8 +181,8 @@ class SUtil
 		{
 			AndroidPermissions.requestPermission('READ_EXTERNAL_STORAGE');
 			AndroidPermissions.requestPermission('WRITE_EXTERNAL_STORAGE');
-			showPopUp('Notice!',
-				'If you accepted the permissions you are all good!' + '\nIf you didn\'t then expect a crash' + '\nPress Ok to see what happens');
+			showPopUp('If you accepted the permissions you are all good!' + '\nIf you didn\'t then expect a crash' + '\nPress Ok to see what happens',
+				'Notice!');
 			if (!AndroidEnvironment.isExternalStorageManager())
 			{
 				AndroidSettings.requestSetting('MANAGE_APP_ALL_FILES_ACCESS_PERMISSION');
@@ -197,7 +197,7 @@ class SUtil
     		}
 			catch (e:Dynamic)
 			{
-				showPopUp('Error!', 'Please create folder to\n' + SUtil.getStorageDirectory(true) + '\nPress OK to close the game');
+				showPopUp('Please create folder to\n' + SUtil.getStorageDirectory(true) + '\nPress OK to close the game', 'Error!');
 				LimeSystem.exit(1);
 			}
 		}
@@ -220,7 +220,7 @@ class SUtil
 	}
 	#end
 	#end
-	public static function showPopUp(title:String, message:String):Void
+	public static function showPopUp(message:String, title:String):Void
 	{
 		#if desktop
 		try
