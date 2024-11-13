@@ -101,7 +101,7 @@ class NotesSubState extends MusicBeatSubstate
 				} else if(controls.UI_RIGHT_P) {
 					updateValue(1);
 					FlxG.sound.play(Paths.sound('scrollMenu'));
-				} else if(controls.RESET) {
+				} else if(controls.RESET || _virtualpad.buttonC.justPressed) {
 					resetValue(curSelected, typeSelected);
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 				}
@@ -184,6 +184,10 @@ class NotesSubState extends MusicBeatSubstate
 		if(nextAccept > 0) {
 			nextAccept -= 1;
 		}
+		
+		addVirtualPad(FULL, A_B_C);
+		addVirtualPadCamera();
+		
 		super.update(elapsed);
 	}
 

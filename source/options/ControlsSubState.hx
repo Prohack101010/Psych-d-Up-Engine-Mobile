@@ -111,6 +111,9 @@ class ControlsSubState extends MusicBeatSubstate {
 			}
 		}
 		changeSelection();
+		
+		addVirtualPad(FULL, A_B);
+		addVirtualPadCamera();
 	}
 
 	var leaving:Bool = false;
@@ -146,6 +149,7 @@ class ControlsSubState extends MusicBeatSubstate {
                     }
                     SelectSubstate.titleText.text = 'Mobile Controls';
 				    MobileControlSelectSubState.inControlsSubstate = false; // Not Needed But IDK
+				    removeVirtualPad();
 				}
 				close();
 				FlxG.sound.play(Paths.sound('cancelMenu'));

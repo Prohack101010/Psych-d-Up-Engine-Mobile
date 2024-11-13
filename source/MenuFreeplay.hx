@@ -280,7 +280,6 @@ class MenuFreeplay extends MusicBeatState
 		});
 		
 		addVirtualPad(FULL, A_B_C_X_Y_Z);
-		addVirtualPadCamera();
 	}
 
 	override function closeSubState() {

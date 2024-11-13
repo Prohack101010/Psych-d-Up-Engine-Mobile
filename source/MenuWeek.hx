@@ -284,7 +284,6 @@ class MenuWeek extends MusicBeatState
 		});
 		
 		addVirtualPad(FULL, A_B_X_Y);
-		addVirtualPadCamera();
 	}
 
 	override function closeSubState() {
@@ -357,11 +356,13 @@ class MenuWeek extends MusicBeatState
 			{
 				persistentUpdate = false;
 				openSubState(new GameplayChangersSubstate());
+				removeVirtualPad();
 			}
 			else if(controls.RESET || _virtualpad.buttonY.justPressed)
 			{
 				persistentUpdate = false;
 				openSubState(new ResetScoreSubState('', curDifficulty, '', curWeek));
+				removeVirtualPad();
 				//FlxG.sound.play(Paths.sound('scrollMenu'));
 			}
 			else if (controls.ACCEPT)
