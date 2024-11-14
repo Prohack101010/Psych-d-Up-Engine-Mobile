@@ -46,7 +46,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'If checked, notes go Down instead of Up, simple enough.', //Description
 			'downScroll', //Save data variable name
 			'bool', //Variable type
-			false); //Default value
+			#if mobile true #else false #end); //Default value
 		addOption(option);
 
 		var option:Option = new Option('Middlescroll',

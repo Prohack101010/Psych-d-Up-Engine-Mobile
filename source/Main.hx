@@ -10,6 +10,7 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
+import mobile.backend.MobileScaleMode;
 import lime.app.Application;
 
 #if desktop
@@ -125,6 +126,10 @@ class Main extends Sprite
 		#end
 		
 		#if android FlxG.android.preventDefaultKeys = [BACK]; #end
+		
+		#if mobile
+		FlxG.scaleMode = new MobileScaleMode();
+		#end
 		
 		#if CRASH_HANDLER
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
