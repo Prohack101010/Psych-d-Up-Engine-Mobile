@@ -33,12 +33,7 @@ class PlaySelection extends MusicBeatState
 
 	var bg:FlxSprite = new FlxSprite(-89).loadGraphic(Paths.image('pBG_Main'));
 	
-	// Yeni Flixel Addons 3.0.2 sürümünde FlxBackdrop oluşturma -GPT4100K
     var checker:FlxBackdrop = new FlxBackdrop();
-    checker.loadGraphic(Paths.image('Play_Checker')); // Görseli yükleme
-    checker.scrollFactor.set(0.2, 0.2); // Kaydırma faktörlerini ayarlama
-    checker.createParallax(0.2, 0.2); // Paralaks efektini oluşturma
-    checker.setScrollFactors(true, true); // Kaydırma faktörlerini ayarlama
     
 	var gradientBar:FlxSprite = new FlxSprite(0,0).makeGraphic(FlxG.width, 300, 0xFFAA00AA);
 	var side:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('Play_Bottom'));
@@ -80,6 +75,12 @@ class PlaySelection extends MusicBeatState
 		gradientBar.y = FlxG.height - gradientBar.height;
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
+		
+		// Yeni Flixel Addons 3.0.2 sürümünde FlxBackdrop oluşturma -GPT4100K
+		checker.loadGraphic(Paths.image('Play_Checker')); // Görseli yükleme
+        checker.scrollFactor.set(0.2, 0.2); // Kaydırma faktörlerini ayarlama
+        checker.createParallax(0.2, 0.2); // Paralaks efektini oluşturma
+        checker.setScrollFactors(true, true); // Kaydırma faktörlerini ayarlama
 
 		add(checker);
 		checker.scrollFactor.set(0, 0.07);
