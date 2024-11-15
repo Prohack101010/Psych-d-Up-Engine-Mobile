@@ -272,9 +272,6 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		if(nextAccept > 0) {
 			nextAccept -= 1;
 		}
-		
-		grpOptions.x += 350;
-		grpTexts.x += 350;
 		super.update(elapsed);
 	}
 

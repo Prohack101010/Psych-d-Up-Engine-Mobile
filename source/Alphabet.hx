@@ -8,7 +8,7 @@ import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.util.FlxTimer;
 import flixel.system.FlxSound;
-import openfl.media.Sound;
+import flash.media.Sound;
 
 using StringTools;
 
@@ -27,12 +27,9 @@ class Alphabet extends FlxSpriteGroup
 	public var letters:Array<AlphaCharacter> = [];
 
 	public var isMenuItem:Bool = false;
-	public var isOptionMenuItem:Bool = false;
-	public var targetY:Float = 0;
-	public var targetX:Float = 0;
+	public var targetY:Int = 0;
 	public var changeX:Bool = true;
 	public var changeY:Bool = true;
-	public var itemType:String = "";
 
 	public var alignment(default, set):Alignment = LEFT;
 	public var scaleX(default, set):Float = 1;
@@ -163,44 +160,11 @@ class Alphabet extends FlxSpriteGroup
 	{
 		if (isMenuItem)
 		{
-			var scaledY = FlxMath.remapToRange(targetY, 0, 1, 0, 1.3);
-
-		switch (itemType)
-		{
-			case "Vertical":
-				y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.5), 0.16/(ClientPrefs.framerate/60));
-				x = FlxMath.lerp(x, (targetY * 0) + 308, 0.16/(ClientPrefs.framerate/60));
-				x += targetX/(ClientPrefs.framerate/60);
-			
-			case "C-Shape":
-			    y = FlxMath.lerp(y, (scaledY * 65) + (FlxG.height * 0.39), 0.16/(ClientPrefs.framerate/60));
-
-			    x = FlxMath.lerp(x, Math.exp(scaledY * 0.8) * 70 + (FlxG.width * 0.1), 0.16/(ClientPrefs.framerate/60));
-
-				if (scaledY < 0)
-				{
-			    	x = FlxMath.lerp(x, Math.exp(scaledY * -0.8) * 70 + (FlxG.width * 0.1), 0.16/(ClientPrefs.framerate/60));
-			    }
-	
-				if (x > 900)
-					x = 900;
-			case "D-Shape":
-				y = FlxMath.lerp(y, (scaledY * 90) + (FlxG.height * 0.45), 0.16/(ClientPrefs.framerate/60));
-	
-				x = FlxMath.lerp(x, Math.exp(scaledY * 0.8) * -70 + (FlxG.width * 0.35), 0.16/(ClientPrefs.framerate/60));
-				if (scaledY < 0)
-					x = FlxMath.lerp(x, Math.exp(scaledY * -0.8) * -70 + (FlxG.width * 0.35), 0.16/(ClientPrefs.framerate/60));
-	
-				if (x < -900)
-					x = -900;
-				
-			default:
-				y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.16/(ClientPrefs.framerate/60));
-				if (isOptionMenuItem)
-				    x = FlxMath.lerp(x, (targetY * 20) + 90 + 75, 0.16/(ClientPrefs.framerate/60));
-				else
-					x = FlxMath.lerp(x, (targetY * 20) + 90, 0.16/(ClientPrefs.framerate/60));
-		}
+			var lerpVal:Float = CoolUtil.boundTo(elapsed * 9.6, 0, 1);
+			if(changeX)
+				x = FlxMath.lerp(x, (targetY * distancePerItem.x) + startPosition.x, lerpVal);
+			if(changeY)
+				y = FlxMath.lerp(y, (targetY * 1.3 * distancePerItem.y) + startPosition.y, lerpVal);
 		}
 		super.update(elapsed);
 	}

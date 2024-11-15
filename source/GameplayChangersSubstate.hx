@@ -360,15 +360,13 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 		for (item in grpOptions.members) {
 			item.targetY = bullShit - curSelected;
 			bullShit++;
-            
-            item.x += 300;
+
 			item.alpha = 0.6;
 			if (item.targetY == 0) {
 				item.alpha = 1;
 			}
 		}
 		for (text in grpTexts) {
-		    text.x += 300;
 			text.alpha = 0.6;
 			if(text.ID == curSelected) {
 				text.alpha = 1;
