@@ -8,6 +8,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.addons.transition.FlxTransitionableState;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
@@ -30,10 +31,10 @@ using StringTools;
 class ControlsSubState extends MusicBeatSubstate {
 	private static var curSelected:Int = 1;
 	private static var curAlt:Bool = false;
+	var SelectSubstate = MobileControlSelectSubState;
 
 	private static var defaultKey:String = 'Reset to Default Keys';
 	private var bindLength:Int = 0;
-	var SelectSubstate = MobileControlSelectSubState;
 
 	var optionShit:Array<Dynamic> = [
 		['NOTES'],
@@ -111,9 +112,10 @@ class ControlsSubState extends MusicBeatSubstate {
 			}
 		}
 		changeSelection();
-		
+
+		#if android
 		addVirtualPad(FULL, A_B);
-		addVirtualPadCamera();
+		#end
 	}
 
 	var leaving:Bool = false;
