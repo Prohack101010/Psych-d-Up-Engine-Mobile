@@ -1,4 +1,4 @@
-package;
+package kraloyuncu;
 
 #if !display
 #if macro

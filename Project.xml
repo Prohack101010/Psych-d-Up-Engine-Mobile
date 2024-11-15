@@ -180,14 +180,14 @@
 	<!--Allow working memory greater than 1 Gig-->
 	<!--haxedef name="HXCPP_GC_BIG_BLOCKS"-->
 	
-	<!-- This macro allows addition of new functionality to existing Flixel. -->
-	<haxeflag name="--macro" value="addMetadata('@:build(FlxMacro.buildFlxBasic())', 'flixel.FlxBasic')" />
-	
 	<!-- Show debug traces for hxCodec -->
 	<haxedef name="HXC_DEBUG_TRACE" if="debug" />
 	
 	<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
+	
+	<!-- This macro allows addition of new functionality to existing Flixel. -->
+	<haxeflag name="--macro" value="addMetadata('@:build(kraloyuncu.FlxMacro.buildFlxBasic())', 'flixel.FlxBasic')" />
 
 	<!--Enable this for Nape release builds for a serious peformance improvement-->
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
