@@ -24,9 +24,6 @@ import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
 import Controls;
-#if android
-import android.Hardware;
-#end
 
 using StringTools;
 
@@ -79,16 +76,6 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'bool',
 			false);
 		addOption(option);
-
-		#if android
-		var option:Option = new Option('Vibrations',
-			"If unchecked, your phone will not vibrate.",
-			'vibration',
-			'bool',
-			true);
-		addOption(option);
-		option.onChange = onChangeVibration;
-		#end
 
 		var option:Option = new Option('Hitsound Volume',
 			'Funny notes does \"Tick!\" when you hit them."',
@@ -165,14 +152,4 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 	{
 		FlxG.sound.play(Paths.sound('hitsound'), ClientPrefs.hitsoundVolume);
 	}
-
-	#if android
-	function onChangeVibration()
-	{
-		if(ClientPrefs.vibration)
-		{
-			Hardware.vibrate(500);
-		}
-	}
-	#end
 }
