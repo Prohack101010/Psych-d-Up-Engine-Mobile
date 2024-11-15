@@ -21,6 +21,12 @@ import mobile.states.CopyState;
 #if linux
 import lime.graphics.Image;
 
+#if sys
+import sys.FileSystem;
+import sys.io.File;
+#end
+import openfl.events.UncaughtErrorEvent;
+import haxe.CallStack;
 import haxe.io.Path;
 import sys.FileSystem;
 import sys.io.File;
