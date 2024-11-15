@@ -1,5 +1,6 @@
 package;
 
+import debug.FPSCounter;
 import mobile.backend.CrashHandler;
 import openfl.events.UncaughtErrorEvent;
 import Highscore;
