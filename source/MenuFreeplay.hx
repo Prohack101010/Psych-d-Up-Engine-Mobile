@@ -51,9 +51,7 @@ class MenuFreeplay extends MusicBeatState
 	private var iconArray:Array<HealthIcon> = [];
 
 	var bg:FlxSprite = new FlxSprite(-89).loadGraphic(Paths.image('fBG_Main'));
-	
-    var checker:FlxBackdrop = new FlxBackdrop();
-	
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Free_Checker'), 0.2, 0.2, true, true);
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFAA00AA);
 	var side:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('Free_Bottom'));
 	var boombox:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('Boombox'));
@@ -125,12 +123,6 @@ class MenuFreeplay extends MusicBeatState
 		bg.antialiasing = true;
 		add(bg);
 		bg.alpha = 0;
-		
-		// Yeni Flixel Addons 3.0.2 sürümünde FlxBackdrop oluşturma -GPT4100K
-		checker.loadGraphic(Paths.image('Free_Checker')); // Görseli yükleme
-        checker.scrollFactor.set(0.2, 0.2); // Kaydırma faktörlerini ayarlama
-        checker.createParallax(0.2, 0.2); // Paralaks efektini oluşturma
-        checker.setScrollFactors(true, true); // Kaydırma faktörlerini ayarlama
 
 		add(checker);
 		checker.scrollFactor.set(0, 0.07);

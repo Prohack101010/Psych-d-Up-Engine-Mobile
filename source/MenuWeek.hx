@@ -86,12 +86,7 @@ class MenuWeek extends MusicBeatState
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
 
-		// Yeni Flixel Addons 3.0.2 sürümünde FlxBackdrop oluşturma -GPT4100K
-        var checker:FlxBackdrop = new FlxBackdrop();
-        checker.loadGraphic(Paths.image('Week_Checker')); // Görseli yükleme
-        checker.scrollFactor.set(0.2, 0.2); // Kaydırma faktörlerini ayarlama
-        checker.createParallax(0.2, 0.2); // Paralaks efektini oluşturma
-        checker.setScrollFactors(true, true); // Kaydırma faktörlerini ayarlama
+		checker = new FlxBackdrop(Paths.image('Week_Checker'), 0.2, 0.2, true, true);
 		add(checker);
 		checker.scrollFactor.set(0, 0.07);
 
