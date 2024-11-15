@@ -11,9 +11,6 @@ import mobile.flixel.FlxHitbox;
 import mobile.flixel.FlxVirtualPad;
 import mobile.flixel.FlxNewHitbox;
 
-//Shader
-import flixel.system.FlxShader;
-
 //Flixel
 import flixel.FlxG;
 import flixel.FlxSprite;

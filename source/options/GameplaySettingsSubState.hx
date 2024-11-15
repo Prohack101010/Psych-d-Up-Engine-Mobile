@@ -38,7 +38,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'Check this if you want to play with\na controller instead of using your Keyboard.',
 			'controllerMode',
 			'bool',
-			#if android true #else false #end);
+			false);
 		addOption(option);
 
 		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
@@ -46,7 +46,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'If checked, notes go Down instead of Up, simple enough.', //Description
 			'downScroll', //Save data variable name
 			'bool', //Variable type
-			false); //Default value
+			#if mobile true #else false #end); //Default value
 		addOption(option);
 
 		var option:Option = new Option('Middlescroll',
