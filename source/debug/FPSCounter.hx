@@ -30,13 +30,10 @@ class FPSCounter extends TextField
 		The current memory usage (WARNING: this is NOT your total program memory usage, rather it shows the garbage collector memory)
 	**/
 	public static var memoryMegas(get, never):Float;
-	
-	public static var FPSThing:String = '$currentFPS';
 
 	@:noCompletion private var times:Array<Float>;
 
 	public var os:String = '';
-	public static var oslua:String = '';
 
 	public function new(x:Float = 10, y:Float = 10, color:Int = 0x000000)
 	{
@@ -46,11 +43,6 @@ class FPSCounter extends TextField
 			os = '\nOS: ${LimeSystem.platformName}' #if cpp + ' ${getArch() != 'Unknown' ? getArch() : ''}' #end;
 		else
 			os = '\nOS: ${LimeSystem.platformName}' #if cpp + ' ${getArch() != 'Unknown' ? getArch() : ''}' #end + ' - ${LimeSystem.platformVersion}';
-			
-		if (LimeSystem.platformName == LimeSystem.platformVersion || LimeSystem.platformVersion == null)
-			oslua = '${LimeSystem.platformName}' #if cpp + ' ${getArch() != 'Unknown' ? getArch() : ''}' #end;
-		else
-			oslua = '${LimeSystem.platformName}' #if cpp + ' ${getArch() != 'Unknown' ? getArch() : ''}' #end + ' - ${LimeSystem.platformVersion}';
 
 		positionFPS(x, y);
 
@@ -86,17 +78,11 @@ class FPSCounter extends TextField
 
 	public dynamic function updateText():Void
 	{
-	    FPSThing = '$currentFPS';
-	    if (FunkinLua.FPSCounterText == null) {
-    		text = 
-    		'FPS: $currentFPS' + 
-    		'\nPsych Extended 1.0.0 - Hotfix' + 
-    		'\nMemory: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}' +
-    		os;
-    	} else {
-    	    text = 
-    		FunkinLua.FPSCounterText;
-    	}
+    	text = 
+    	'FPS: $currentFPS' + 
+    	'\nPsych Extended 1.0.0 - Hotfix' + 
+    	'\nMemory: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}' +
+    	os;
 
 		textColor = 0xFFFFFFFF;
 		if (currentFPS < FlxG.drawFramerate * 0.5)
