@@ -8,9 +8,8 @@
     },
     {
       "name": "openfl",
-      "type": "git",
-      "ref": "develop",
-      "url": "https://github.com/Prohack101010/openfl-0.6.3"
+      "type": "haxelib",
+      "version": "9.2.2"
     },
     {
       "name": "flixel",

@@ -10,7 +10,9 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
+#if mobile
 import mobile.backend.MobileScaleMode;
+#end
 import lime.app.Application;
 
 #if desktop
