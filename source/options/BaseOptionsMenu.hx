@@ -272,6 +272,9 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		if(nextAccept > 0) {
 			nextAccept -= 1;
 		}
+		
+		grpOptions.x += 350;
+		grpTexts.x += 350;
 		super.update(elapsed);
 	}
 
@@ -306,7 +309,6 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		var bullShit:Int = 0;
 
 		for (item in grpOptions.members) {
-		    item.x += 300;
 			item.targetY = bullShit - curSelected;
 			bullShit++;
 
@@ -316,7 +318,6 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			}
 		}
 		for (text in grpTexts) {
-		    text.x += 300;
 			text.alpha = 0.6;
 			if(text.ID == curSelected) {
 				text.alpha = 1;
