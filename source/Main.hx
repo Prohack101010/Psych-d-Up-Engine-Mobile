@@ -21,17 +21,6 @@ import mobile.states.CopyState;
 #if linux
 import lime.graphics.Image;
 
-#if sys
-import sys.FileSystem;
-import sys.io.File;
-#end
-import openfl.events.UncaughtErrorEvent;
-import haxe.CallStack;
-import haxe.io.Path;
-import sys.FileSystem;
-import sys.io.File;
-import sys.io.Process;
-
 @:cppInclude('./external/gamemode_client.h')
 @:cppFileCode('
 	#define GAMEMODE_AUTO
@@ -73,16 +62,9 @@ class Main extends Sprite
 		#if mobile
 	    #if android
 		SUtil.doPermissionsShit();
-		if (!FileSystem.exists(SUtil.getStorageDirectory()))
-			FileSystem.createDirectory(SUtil.getStorageDirectory());
 		#end
 		Sys.setCwd(SUtil.getStorageDirectory());
 		#end
-		
-		#if android
-		if (!FileSystem.exists(SUtil.getStorageDirectory()))
-			FileSystem.createDirectory(SUtil.getStorageDirectory());
-	    #end
 		CrashHandler.init();
 
 		#if windows
