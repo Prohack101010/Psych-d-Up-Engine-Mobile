@@ -92,15 +92,6 @@ class OptionsState extends MusicBeatState
 		changeSelection();
 		ClientPrefs.saveSettings();
 
-		var tipText:FlxText = new FlxText(10, 32, 0, 'Press E to Go In Mobile Settings Menu', 16);
-		tipText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		tipText.borderSize = 2;
-		tipText.scrollFactor.set();
-		add(tipText);
-
-		changeSelection();
-		ClientPrefs.saveSettings();
-
 		addVirtualPad(UP_DOWN, A_B_E);
 		addVirtualPadCamera();
 
