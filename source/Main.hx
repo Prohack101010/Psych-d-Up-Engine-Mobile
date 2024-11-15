@@ -21,8 +21,10 @@ import mobile.states.CopyState;
 #if linux
 import lime.graphics.Image;
 
+import haxe.io.Path;
 import sys.FileSystem;
 import sys.io.File;
+import sys.io.Process;
 
 @:cppInclude('./external/gamemode_client.h')
 @:cppFileCode('
