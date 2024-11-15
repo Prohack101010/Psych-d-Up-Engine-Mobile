@@ -14,8 +14,8 @@
     {
       "name": "flixel",
       "type": "git",
-      "ref": "main",
-      "url": "https://github.com/MobilePorting/flixel"
+      "ref": "a3dff58cdb312876b18766e4d288d769934a721d",
+      "url": "https://github.com/Prohack101010/flixel-0.6.3_ex"
     },
     {
       "name": "flixel-addons",
