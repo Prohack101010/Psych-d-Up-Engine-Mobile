@@ -134,8 +134,6 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 			optionText.scaleX = 0.8;
 			optionText.scaleY = 0.8;
 			optionText.targetY = i;
-			optionText.x += 200; //Manual Fix ig
-			optionText.startPosition.x += 200; //Manual Fix ig
 			grpOptions.add(optionText);
 
 			if(optionsArray[i].type == 'bool') {
@@ -158,6 +156,8 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 				optionsArray[i].setChild(valueText);
 			}
 			updateTextFrom(optionsArray[i]);
+			
+			optionsArray[i].x += 300;
 		}
 
 		changeSelection();

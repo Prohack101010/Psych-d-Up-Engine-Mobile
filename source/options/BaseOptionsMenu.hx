@@ -95,9 +95,6 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			/*optionText.forceX = 300;
 			optionText.yMult = 90;*/
 			optionText.targetY = i;
-			
-			optionText.x += 200; //Manual Fix ig
-			optionText.startPosition.x += 200; //Manual Fix ig
 			grpOptions.add(optionText);
 
 			if(optionsArray[i].type == 'bool') {
@@ -123,14 +120,16 @@ class BaseOptionsMenu extends MusicBeatSubstate
 				reloadBoyfriend();
 			}
 			updateTextFrom(optionsArray[i]);
+			
+			optionsArray[i].x += 300;
 		}
 
 		changeSelection();
 		reloadCheckboxes();
 
-                #if android
-                addVirtualPad(FULL, A_B_C);
-                #end
+        #if mobile
+        addVirtualPad(FULL, A_B_C);
+        #end
 
 	}
 
