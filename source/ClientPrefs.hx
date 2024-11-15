@@ -137,7 +137,7 @@ class ClientPrefs {
 		FlxG.save.data.extraKeyReturn1 = extraKeyReturn1;
 		FlxG.save.data.extraKeyReturn2 = extraKeyReturn2;
 		FlxG.save.data.extraKeyReturn3 = extraKeyReturn3;
-		FlxG.save.data.extraKeyReturn4 = extraKeyReturn5;
+		FlxG.save.data.extraKeyReturn4 = extraKeyReturn4;
 		FlxG.save.data.healthBarAlpha = healthBarAlpha;
 		FlxG.save.data.VirtualPadAlpha = VirtualPadAlpha;
 		FlxG.save.data.hitboxalpha = hitboxalpha;
