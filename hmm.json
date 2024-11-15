@@ -13,8 +13,9 @@
     },
     {
       "name": "flixel",
-      "type": "haxelib",
-      "version": "5.2.2"
+      "type": "git",
+      "ref": "main",
+      "url": "https://github.com/MobilePorting/flixel"
     },
     {
       "name": "flixel-addons",
