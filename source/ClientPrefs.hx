@@ -33,6 +33,7 @@ class ClientPrefs {
 	public static var scoreZoom:Bool = true;
 	public static var noReset:Bool = false;
 	public static var hitboxhint:Bool = false;
+	public static var wideScreen:Bool = false;
 	public static var healthBarAlpha:Float = 1;
 	public static var VirtualPadAlpha:Float = 0.75;
 	public static var hitboxalpha:Float = 0.7;
@@ -125,6 +126,7 @@ class ClientPrefs {
 		FlxG.save.data.scoreZoom = scoreZoom;
 		FlxG.save.data.noReset = noReset;
 		FlxG.save.data.hitboxhint = hitboxhint;
+		FlxG.save.data.wideScreen = wideScreen;
 		FlxG.save.data.hitboxmode = hitboxmode;
 		FlxG.save.data.hitboxtype = hitboxtype;
 		FlxG.save.data.storageType = storageType;
@@ -235,6 +237,9 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.hitboxhint != null) {
 			hitboxhint = FlxG.save.data.hitboxhint;
+		}
+		if(FlxG.save.data.wideScreen != null) {
+			wideScreen = FlxG.save.data.wideScreen;
 		}
 		if(FlxG.save.data.hitboxmode != null) {
 			hitboxmode = FlxG.save.data.hitboxmode;
