@@ -3,7 +3,7 @@
     {
       "name": "lime",
       "type": "git",
-      "ref": "62cbf7d708777987d04ff5e8166ed2c588eac194",
+      "ref": "develop",
       "url": "https://github.com/mcagabe19-stuff/lime-8.1.3"
     },
     {
@@ -14,8 +14,8 @@
     {
       "name": "flixel",
       "type": "git",
-      "ref": "a3dff58cdb312876b18766e4d288d769934a721d",
-      "url": "https://github.com/Prohack101010/flixel-0.6.3_ex"
+      "ref": "main",
+      "url": "https://github.com/MobilePorting/flixel"
     },
     {
       "name": "flixel-addons",
