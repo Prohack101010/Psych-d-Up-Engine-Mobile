@@ -79,9 +79,9 @@ class FPSCounter extends TextField
 	public dynamic function updateText():Void
 	{
     	text = 
-    	'FPS: $currentFPS' + 
-    	'\nPsych Extended 1.0.0 - Hotfix' + 
-    	'\nMemory: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}' +
+    	"FPS: $currentFPS" + 
+    	"\nPsych'd Up Engine Mobile" + 
+    	"\nMemory: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}" +
     	os;
 
 		textColor = 0xFFFFFFFF;
