@@ -30,6 +30,10 @@ class ClientPrefs {
 	public static var hitboxmode:String = 'New';
 	public static var hitboxtype:String = 'Gradient';
 	public static var storageType:String = 'EXTERNAL';
+	public static var extraKeyReturn1:String = 'SHIFT';
+    public static var extraKeyReturn2:String = 'SPACE';
+    public static var extraKeyReturn3:String = 'Q';
+    public static var extraKeyReturn4:String = 'E';
 	public static var scoreZoom:Bool = true;
 	public static var noReset:Bool = false;
 	public static var hitboxhint:Bool = false;
@@ -130,6 +134,10 @@ class ClientPrefs {
 		FlxG.save.data.hitboxmode = hitboxmode;
 		FlxG.save.data.hitboxtype = hitboxtype;
 		FlxG.save.data.storageType = storageType;
+		FlxG.save.data.extraKeyReturn1 = extraKeyReturn1;
+		FlxG.save.data.extraKeyReturn2 = extraKeyReturn2;
+		FlxG.save.data.extraKeyReturn3 = extraKeyReturn3;
+		FlxG.save.data.extraKeyReturn4 = extraKeyReturn5;
 		FlxG.save.data.healthBarAlpha = healthBarAlpha;
 		FlxG.save.data.VirtualPadAlpha = VirtualPadAlpha;
 		FlxG.save.data.hitboxalpha = hitboxalpha;
@@ -249,6 +257,18 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.storageType != null) {
 			storageType = FlxG.save.data.storageType;
+		}
+		if(FlxG.save.data.extraKeyReturn1 != null) {
+			extraKeyReturn1 = FlxG.save.data.extraKeyReturn1;
+		}
+		if(FlxG.save.data.extraKeyReturn2 != null) {
+			extraKeyReturn2 = FlxG.save.data.extraKeyReturn2;
+		}
+		if(FlxG.save.data.extraKeyReturn3 != null) {
+			extraKeyReturn3 = FlxG.save.data.extraKeyReturn3;
+		}
+		if(FlxG.save.data.extraKeyReturn4 != null) {
+			extraKeyReturn4 = FlxG.save.data.extraKeyReturn4;
 		}
 		if(FlxG.save.data.healthBarAlpha != null) {
 			healthBarAlpha = FlxG.save.data.healthBarAlpha;
