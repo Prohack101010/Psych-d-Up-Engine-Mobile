@@ -14,8 +14,10 @@
     },
     {
       "name": "flixel",
-      "type": "haxelib",
-      "version": "5.5.0"
+      "type": "git",
+      "dir": null,
+      "ref": "main",
+      "url": "https://github.com/Prohack101010/flixel-0.6.3_ex"
     },
     {
       "name": "flixel-addons",
